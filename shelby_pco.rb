@@ -137,7 +137,7 @@ def csv_io(filename)
     CSV.foreach(filename) do |row|
       #       0    1   2    3       4       5     6             7                   8 Gender
       csv << [household_ids(row[headers.index("FamilyMember1NameID")], row[103], row[116], row[129], row[142], row[155], row[168], row[181], row[194], row[207]), 
-              '', '', row[headers.index("FirstName")], row[headers.index("Salutation/Greeting")], row[headers.index("LastName")], '', convert_dates(row[headers.index("BirthDate")]), 
+              '', '', row[headers.index("First Name")], row[headers.index("Salutation/Greeting")], row[headers.index("Last Name")], '', convert_dates(row[headers.index("Birthdate")]), 
               manage_gender(row[headers.index("Gender")]), '', '', '', child?(row[headers.index("FamilyPosition")]), row[headers.index("NextYearEnvelope#")], '', '', '', 'TRUE', 'TRUE', 'TRUE', street(row[headers.index("AddressLine1")]),
               city(row[headers.index("City")]), state(row[headers.index("State")]), zip(row[headers.index("PostalCode")]), phone(row[headers.index("Phone#")]), '', '', row[headers.index("SocialSecurity#")], row[headers.index("MaritalStatus")], row[headers.index("MailStatus")],
               row[headers.index("DifferentLastName")], row[headers.index("EmailAddress")], '', '', '', '', '', primary(row[headers.index("MailStatus")]), 'Yes'] unless shelby_cnt == 0
